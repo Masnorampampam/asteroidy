@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
+    public GameOverScreen GameOverSreen;
+
     CameraScript cs;
     // odleg³oœæ spawnowania w pionie i poziomie od œrodka gry
     float verticalDistance, horizontalDistance;
@@ -76,9 +78,9 @@ public class LevelManager : MonoBehaviour
         return randomSpawnLocation;
     }
     public void GameOver()
+        GameOverScreen.Setup(maxPlatform);
     {
-        //zatrzymaj czas
-        Time.timeScale = 0;
+    Time.timeScale = 0;
         gameOverScreen.SetActive(true);
     }
 }
